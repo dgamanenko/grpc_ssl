@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package grpcdata;
+
+message ProdRootData {
+    string message = 1;
+}
+
+service ProdServer {
+  rpc ProdRoot(ProdRootData) returns (ProdRootData) {}
+}
+
+message StageRootData {
+    string message = 1;
+}
+
+service StageServer {
+  rpc StageRoot(StageRootData) returns (StageRootData) {}
+}
+
