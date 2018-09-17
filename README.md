@@ -51,8 +51,8 @@ server {
     listen 1443 ssl http2;
     charset utf-8;
     server_name     example.domain.com;
-    ssl_certificate         /etc/nginx/ssl/cert.crt;
-    ssl_certificate_key     /etc/nginx/ssl/cert.key;
+    ssl_certificate         /path/to/server.crt;
+    ssl_certificate_key     /path/to/server.key;
 
     location /grpcdata.ProdServer {
             grpc_pass grpcs://grpc-upstream-root;
