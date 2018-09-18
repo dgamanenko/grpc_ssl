@@ -20,8 +20,8 @@ secure_client: ## Run client secure
 secure_server: ## Run server secure
 	python secure_server.py
 
-secure_client_nginx: ## Run client secure with nginx (>=1.13) grpc upstreams
-	python secure_client.py
+client: ## Run client secure with nginx (>=1.13) grpc upstreams
+	python client.py
 
 gen_key: ## Generate certificate for the server. Uses openssl.
 	openssl req -newkey rsa:2048 -nodes -keyout server.key -x509 -days 365 -out server.crt

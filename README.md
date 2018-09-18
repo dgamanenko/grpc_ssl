@@ -74,9 +74,9 @@ server {
 }
 ```
 ### Run client
-#### edit host in secure_client_nginx.py and run make command
+#### edit host in client.py and run make command
 ```
-make secure_client_nginx
+make client
 ```
 
 ### Output results
@@ -88,7 +88,7 @@ Starting server secure. Listening on port 50051.
 ```
 #### client
 ```
-$ make secure_client_nginx
+$ make client
 python secure_client.py
 client send: hi prod! to Prod upstream
 client send: hi stage! to Stage upstream
