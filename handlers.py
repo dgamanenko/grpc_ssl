@@ -83,3 +83,6 @@ def tail(message, tmpfile):
                                                                                                     linenum=linenum,
                                                                                                     tmpfile=tmpfile)
     return result
+
+if __name__ == '__main__':
+    main()

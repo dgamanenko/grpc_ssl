@@ -4,3 +4,5 @@
 *.crt
 *.key
 venv/*
+rggrpc.service.json
+rggrpc.service

@@ -1,4 +1,4 @@
-import signal
+import os, signal, json
 from concurrent import futures
 
 import grpc
@@ -23,11 +23,18 @@ class StageServerServicer(service_pb2_grpc.StageServerServicer):
         return response
 
 def main():
-    port = '50051'
 
-    with open('server.key', 'rb') as f:
+    json_config = os.environ.get('GRPC_RG_JSON_CONFIG', '.')
+    with open('{}'.format(json_config), 'r') as f:
+        envs = json.loads(f.read())
+
+    port = envs['server']['GRPC_RG_SERVER_PORT']
+    ssl_key_file_path = envs['server']['GRPC_RG_SERVER_SSL_KEY_PATH']
+    ssl_crt_file_path = envs['server']['GRPC_RG_SERVER_SSL_CRT_PATH']
+
+    with open('{}'.format(ssl_key_file_path), 'rb') as f:
         private_key = f.read()
-    with open('server.crt', 'rb') as f:
+    with open('{}'.format(ssl_crt_file_path), 'rb') as f:
         certificate_chain = f.read()
 
     server_credentials = grpc.ssl_server_credentials(

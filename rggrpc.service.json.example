@@ -1,0 +1,14 @@
+{
+    "server":
+    {
+          "GRPC_RG_SERVER_NGINX_PORT": "1443",
+          "GRPC_RG_SERVER_NGINX_DOMAIN": "example.domain.com",
+          "GRPC_RG_SERVER_SSL_CRT_PATH": "/edx/rggrpc/server.crt",
+          "GRPC_RG_SERVER_SSL_KEY_PATH": "/edx/rggrpc/server.key",
+          "GRPC_RG_SERVER_PORT": "50051"
+    },
+    "client":
+    {
+          "GRPC_RG_SERVER_SSL_CRT_LOCAL_PATH": "./server.crt"
+    }
+}
